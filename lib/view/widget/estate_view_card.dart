@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -108,42 +109,50 @@ class EstateView extends StatelessWidget {
               bottom: 12.h,
               right: 12.w,
               left: 12.w,
-              child: ClipRect(
-                child: Stack(
-                  children: [
-                    ClipRect(
-                      // Confine he blur effect to the container
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+              child: FadeInLeftBig(
+                duration: const Duration(seconds: 7),
+                child: Container(
+                  clipBehavior: Clip.hardEdge, // Remove the 4 corners
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25.r),
+                  ),
+                  child: Stack(
+                    children: [
+                      ClipRect(
+                        // Confine he blur effect to the container
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            width: 1.sw,
+                            padding: EdgeInsets.all(12.w),
+                            decoration: BoxDecoration(
+                              color: whiteColor
+                                  .withOpacity(0.5), // Adjust opacity as needed
+                              borderRadius: BorderRadius.circular(25.r),
+                            ),
+                            child: Center(
+                              child: Text("Home, $index"),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        right: 0,
                         child: Container(
-                          width: 1.sw,
-                          padding: EdgeInsets.all(12.w),
-                          decoration: BoxDecoration(
-                            color: whiteColor
-                                .withOpacity(0.5), // Adjust opacity as needed
-                            borderRadius: BorderRadius.circular(25.r),
+                          clipBehavior: Clip.hardEdge,
+                          padding: EdgeInsets.all(10.w),
+                          decoration: const ShapeDecoration(
+                            color: whiteColor,
+                            shape: CircleBorder(),
                           ),
-                          child: Center(
-                            child: Text("Home, $index"),
+                          child: const Icon(
+                            Icons.chevron_right,
+                            color: faintGreyColor,
                           ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      right: 0,
-                      child: Container(
-                        padding: EdgeInsets.all(10.w),
-                        decoration: const ShapeDecoration(
-                          color: whiteColor,
-                          shape: CircleBorder(),
-                        ),
-                        child: const Icon(
-                          Icons.chevron_right,
-                          color: faintGreyColor,
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

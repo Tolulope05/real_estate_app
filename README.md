@@ -6,8 +6,9 @@ class FirstBank extends TestProject {
     return {
       "title": "Real Estate App",
       "description": "Moniepoint Test Project",
-      "day": 2,
+      "day": 1,
       "developer": "https://github.com/Tolulope05"
+      "date": "15 October, 2021"
     }
   }
 }

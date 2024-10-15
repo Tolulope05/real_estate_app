@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +29,8 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
   int currentIndex = 2;
 
   Widget iconGenerator(int index) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 500),
       height: 50.h,
       width: 50.w,
       padding: EdgeInsets.all(12.w),
@@ -64,33 +66,36 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
     return Scaffold(
       extendBody: true,
       body: homePages[currentIndex],
-      bottomNavigationBar: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(4.w),
-          margin: EdgeInsets.only(
-            left: 40.w,
-            right: 40.w,
-            bottom: 12.h,
-          ),
-          decoration: BoxDecoration(
-            color: blackColor.withOpacity(0.95),
-            borderRadius: BorderRadius.circular(25.r),
-            boxShadow: [
-              BoxShadow(
-                color: blackColor.withOpacity(0.1),
-                blurRadius: 12.r,
-                spreadRadius: 2.r,
-              )
-            ],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(length, (index) {
-              return GestureDetector(
-                onTap: () => onTap(index),
-                child: iconGenerator(index),
-              );
-            }),
+      bottomNavigationBar: FadeInUpBig(
+        duration: const Duration(seconds: 7),
+        child: SafeArea(
+          child: Container(
+            padding: EdgeInsets.all(4.w),
+            margin: EdgeInsets.only(
+              left: 40.w,
+              right: 40.w,
+              bottom: 12.h,
+            ),
+            decoration: BoxDecoration(
+              color: blackColor.withOpacity(0.95),
+              borderRadius: BorderRadius.circular(25.r),
+              boxShadow: [
+                BoxShadow(
+                  color: blackColor.withOpacity(0.1),
+                  blurRadius: 12.r,
+                  spreadRadius: 2.r,
+                )
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(length, (index) {
+                return GestureDetector(
+                  onTap: () => onTap(index),
+                  child: iconGenerator(index),
+                );
+              }),
+            ),
           ),
         ),
       ),

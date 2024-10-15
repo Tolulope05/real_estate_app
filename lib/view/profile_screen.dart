@@ -1,6 +1,5 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-
 import '../constants/colors.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -19,15 +18,17 @@ class ProfileScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
-        child: Center(
-          child: const Text(
-            "Coming Soon",
-            style: TextStyle(
-              color: blackColor,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+        child: FadeInRight(
+          child: const Center(
+            child: Text(
+              "Coming Soon",
+              style: TextStyle(
+                color: blackColor,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ).animate().slideX(),
+          ),
         ),
       ),
     );
