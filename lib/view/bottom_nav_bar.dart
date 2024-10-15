@@ -25,11 +25,6 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
     CupertinoIcons.person_fill,
   ];
 
-  /**
-   * Other icons include
-   * Iconsax.layer
-   */
-
   int currentIndex = 2;
 
   Widget iconGenerator(int index) {
@@ -57,7 +52,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
   }
 
   List<Widget> homePages = [
-    const SearchScreen(),
+    SearchScreen(),
     const ChatScreen(),
     const HomeScreen(),
     const FavScreen(),

@@ -199,22 +199,22 @@ class HomeScreen extends StatelessWidget {
                           StaggeredGridTile.count(
                             crossAxisCellCount: 4,
                             mainAxisCellCount: 2,
-                            child: EstateView(index: 4),
-                          ),
-                          StaggeredGridTile.count(
-                            crossAxisCellCount: 2,
-                            mainAxisCellCount: 4,
                             child: EstateView(index: 0),
                           ),
                           StaggeredGridTile.count(
                             crossAxisCellCount: 2,
-                            mainAxisCellCount: 2,
+                            mainAxisCellCount: 4,
                             child: EstateView(index: 1),
                           ),
                           StaggeredGridTile.count(
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 2,
                             child: EstateView(index: 2),
+                          ),
+                          StaggeredGridTile.count(
+                            crossAxisCellCount: 2,
+                            mainAxisCellCount: 2,
+                            child: EstateView(index: 3),
                           ),
                         ],
                       ),

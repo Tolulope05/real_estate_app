@@ -95,9 +95,9 @@ class EstateView extends StatelessWidget {
         // width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
-          image: const DecorationImage(
+          image: DecorationImage(
             image: AssetImage(
-              "assets/images/home_1.jpeg",
+              "assets/images/home_${index + 1}.jpeg",
             ),
             fit: BoxFit.cover,
           ),
