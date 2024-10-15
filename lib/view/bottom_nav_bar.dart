@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:real_estate_app/constants/colors.dart';
+import 'package:real_estate_app/view/chat_screen.dart';
+import 'package:real_estate_app/view/fav_screen.dart';
+import 'package:real_estate_app/view/home_screen.dart';
+import 'package:real_estate_app/view/profile_screen.dart';
+import 'package:real_estate_app/view/search_screen.dart';
 
 class AppBottomNavBar extends StatefulWidget {
   const AppBottomNavBar({super.key});
@@ -25,7 +30,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
    * Iconsax.layer
    */
 
-  int currentIndex = 0;
+  int currentIndex = 2;
 
   Widget iconGenerator(int index) {
     return Container(
@@ -52,30 +57,18 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
   }
 
   List<Widget> homePages = [
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.blue,
-    ),
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.yellow,
-    ),
-    Container(
-      color: Colors.purple,
-    ),
+    const SearchScreen(),
+    const ChatScreen(),
+    const HomeScreen(),
+    const FavScreen(),
+    const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: SafeArea(
-        child: homePages[currentIndex],
-      ),
+      body: homePages[currentIndex],
       bottomNavigationBar: SafeArea(
         child: Container(
           padding: EdgeInsets.all(4.w),
