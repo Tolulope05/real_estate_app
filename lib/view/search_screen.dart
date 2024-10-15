@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:animate_do/animate_do.dart';
@@ -31,7 +32,7 @@ class SearchScreen extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: kToolbarHeight + 16.h),
+              SizedBox(height: kToolbarHeight),
               ZoomIn(
                 animate: true,
                 duration: const Duration(seconds: 1),
@@ -392,7 +393,9 @@ class SearchScreen extends StatelessWidget {
               SizedBox(
                 height: kBottomNavigationBarHeight +
                     12.h + // 12.h is the bottom margin
-                    50.h, // 50.h is the height of the CBNB
+                    (Platform.isIOS
+                        ? 50.h
+                        : 12.h), // 50.h is the height of the CBNB
               ),
             ],
           ),

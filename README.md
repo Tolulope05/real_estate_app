@@ -25,10 +25,10 @@ flutter run
 
 ## ScreenShots
 
-<!-- <img src="assets/screenshots/home.png" height="500em" /> -->
+<img src="assets/images/preview.png" height="500em" />
 
 ## Links
 
 * [Website](https://github.com/Tolulope05)
 * [Twitter](https://twitter.com/FakunleTolu)
-* [Instagram](https://instagram.com/tolucodes)
+* [Instagram](https://www.instagram.com/realtolulopefakunle/)

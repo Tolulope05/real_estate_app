@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_number/animated_number.dart';
@@ -252,7 +253,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
-                      Container(height: 200)
+                      SizedBox(
+                        height: kBottomNavigationBarHeight +
+                            12.h + // 12.h is the bottom margin
+                            (Platform.isIOS
+                                ? 50.h
+                                : 12.h), // 50.h is the height of the CBNB
+                      ),
                     ],
                   ),
                 ),
