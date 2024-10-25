@@ -1,7 +1,7 @@
-## First Bank App
+## Real Estate App
 
 ```dart
-class FirstBank extends TestProject {
+class RealEstate extends TestProject {
   video() {
     return {
       "title": "Real Estate App",
